@@ -1,40 +1,69 @@
-import java.io.*;
+import java.util.Scanner;
 
-class nestedSwitch {
+public class nestedSwitch {    
+    public static void main(String args[])  
+      {  
+		Scanner sc=new Scanner(System.in);
+		
+      	//C - CSE, E - ECE, M - Mechanical
+		System.out.print("Enter Your Branch: ");
+		String input = sc.nextLine();
+		String first = input.toUpperCase();
+		char branch = first.charAt(0);
 
-	public static void main (String[] args)
-	{
-		int x = 1, y = 2;
-	
-		// Outer Switch
-		switch (x) {
-	
-		// If x == 1
-		case 1:
-			switch (y) {
-	
-			case 2:
-				System.out.println("Choice is 2");
-				break;
-	
-			case 3:
-				System.out.println("Choice is 3");
-				break;
-			}
-			break;
-	
-		case 4:
-			System.out.println("Choice is 4");
-			break;
-	
-		case 5:
-			System.out.println("Choice is 5");
-			break;
-	
-		default:
-			System.out.println("Choice is other than 1, 2 3, 4, or 5");
-			
-		}
-	}
-}
+		System.out.print("Enter Your Year: ");
+		int collegeYear = sc.nextInt();
+		sc.close(); 
 
+        switch( collegeYear )  
+        {  
+            case 1:  
+                System.out.println("English, Maths, Science");  
+                break;  
+            case 2:  
+                switch( branch )   
+                {  
+                    case 'C':  
+                        System.out.println("Operating System, Java, Data Structure");  
+                        break;  
+                    case 'E':  
+                        System.out.println("Micro processors, Logic switching theory");  
+                        break;  
+                    case 'M':  
+                        System.out.println("Drawing, Manufacturing Machines");  
+                        break;  
+                }  
+                break;  
+            case 3:  
+                switch( branch )   
+                {  
+                    case 'C':  
+                        System.out.println("Computer Organization, MultiMedia");  
+                        break;  
+                    case 'E':  
+                        System.out.println("Fundamentals of Logic Design, Microelectronics");  
+                        break;  
+                    case 'M':  
+                        System.out.println("Internal Combustion Engines, Mechanical Vibration");  
+                        break;  
+                }  
+                break;  
+            case 4:  
+                switch( branch )   
+                {  
+                    case 'C':  
+                        System.out.println("Data Communication and Networks, MultiMedia");  
+                        break;  
+                    case 'E':  
+                        System.out.println("Embedded System, Image Processing");  
+                        break;  
+                    case 'M':  
+                        System.out.println("Production Technology, Thermal Engineering");  
+                        break;  
+                }  
+                break;  
+			default:
+				System.out.println("Please Enter Year (1-4)");
+        }  
+    }  
+}  
